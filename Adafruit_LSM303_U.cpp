@@ -516,7 +516,7 @@ bool Adafruit_LSM303_Mag_Unified::getEvent(sensors_event_t *event) {
       }
       else
       {
-        /* All values are withing range */
+        /* All values are within range */
         readingValid = true;
       }
     }
