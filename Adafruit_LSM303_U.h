@@ -182,12 +182,14 @@ class Adafruit_LSM303_Mag_Unified : public Adafruit_Sensor
     void enableAutoRange(bool enable);
     void setMagGain(lsm303MagGain gain);
     void setMagRate(lsm303MagRate rate);
+    void setOffset(lsm303MagData offset);
     bool getEvent(sensors_event_t*);
     void getSensor(sensor_t*);
 
   private:
     lsm303MagGain   _magGain;
     lsm303MagData   _magData;     // Last read magnetometer data will be available here
+    lsm303MagData   _magOffset;   // Added to raw readings to compensate for zero-offset
     int32_t         _sensorID;
     bool            _autoRangeEnabled;
     
@@ -195,5 +197,9 @@ class Adafruit_LSM303_Mag_Unified : public Adafruit_Sensor
     byte read8(byte address, byte reg);
     void read(void);
 };
+
+inline void Adafruit_LSM303_Mag_Unified::setOffset(lsm303MagData offset) {
+    _magOffset = offset;
+}
 
 #endif

@@ -526,9 +526,9 @@ bool Adafruit_LSM303_Mag_Unified::getEvent(sensors_event_t *event) {
   event->sensor_id = _sensorID;
   event->type      = SENSOR_TYPE_MAGNETIC_FIELD;
   event->timestamp = millis();
-  event->magnetic.x = _magData.x / _lsm303Mag_Gauss_LSB_XY * SENSORS_GAUSS_TO_MICROTESLA;
-  event->magnetic.y = _magData.y / _lsm303Mag_Gauss_LSB_XY * SENSORS_GAUSS_TO_MICROTESLA;
-  event->magnetic.z = _magData.z / _lsm303Mag_Gauss_LSB_Z * SENSORS_GAUSS_TO_MICROTESLA;
+  event->magnetic.x = ( _magData.x / _lsm303Mag_Gauss_LSB_XY * SENSORS_GAUSS_TO_MICROTESLA ) + _magOffset.x;
+  event->magnetic.y = ( _magData.y / _lsm303Mag_Gauss_LSB_XY * SENSORS_GAUSS_TO_MICROTESLA ) + _magOffset.y;
+  event->magnetic.z = ( _magData.z / _lsm303Mag_Gauss_LSB_Z  * SENSORS_GAUSS_TO_MICROTESLA ) + _magOffset.z;
 		
 	return true;
 }
