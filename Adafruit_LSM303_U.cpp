@@ -3,10 +3,10 @@
 
   Designed specifically to work with the Adafruit LSM303DLHC Breakout
 
-  These displays use I2C to communicate, 2 pins are required to interface.
+  These sensors use I2C to communicate, 2 pins are required to interface.
 
   Adafruit invests time and resources providing this open source code,
-  please support Adafruit andopen-source hardware by purchasing products
+  please support Adafruit and open-source hardware by purchasing products
   from Adafruit!
 
   Written by Kevin Townsend for Adafruit Industries.  
@@ -137,7 +137,7 @@ void Adafruit_LSM303_Accel_Unified::read()
  
 /**************************************************************************/
 /*!
-    @brief  Instantiates a new Adafruit_LSM303 class
+    @brief  Constructs a new Adafruit_LSM303_Accel_Unified instance
 */
 /**************************************************************************/
 Adafruit_LSM303_Accel_Unified::Adafruit_LSM303_Accel_Unified(int32_t sensorID) {
@@ -150,7 +150,7 @@ Adafruit_LSM303_Accel_Unified::Adafruit_LSM303_Accel_Unified(int32_t sensorID) {
  
 /**************************************************************************/
 /*!
-    @brief  Setups the HW
+    @brief  Sets up the HW
 */
 /**************************************************************************/
 bool Adafruit_LSM303_Accel_Unified::begin()
@@ -320,7 +320,7 @@ void Adafruit_LSM303_Mag_Unified::read()
  
 /**************************************************************************/
 /*!
-    @brief  Instantiates a new Adafruit_LSM303 class
+    @brief  Constructs a new Adafruit_LSM303_Mag_Unified instance
 */
 /**************************************************************************/
 Adafruit_LSM303_Mag_Unified::Adafruit_LSM303_Mag_Unified(int32_t sensorID) {
